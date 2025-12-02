@@ -44,7 +44,6 @@ public class File extends FileSystemObject {
     @Override
     public FileSystemObject clone(int depth) {
         System.out.println("Prototype stub: clone(depth=" + depth + ") called for File: " + name);
-        // Deep copy of the leaf object's internal state
         return new File(this.name, this.size);
     }
 }

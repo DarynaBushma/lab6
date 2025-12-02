@@ -67,10 +67,8 @@ public class Directory extends FileSystemObject {
         Directory newDirectory = new Directory(this.name);
 
         if (depth == 0) {
-            // Shallow copy: copy only references to children
             newDirectory.children = this.children;
         } else if (depth > 0) {
-            // Deep copy: clone children up to the specified level
             int nextDepth = depth - 1;
             for (FileSystemObject child : this.children) {
                 newDirectory.add(child.clone(nextDepth));
